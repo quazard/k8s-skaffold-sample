@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: skaffold-sample
+  name: skaffold-sample
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skaffold-sample
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: skaffold-sample
+    spec:
+      containers:
+      - image: skaffold/sample
+        name: sample
+        resources: {}
+status: {}

@@ -1,0 +1,16 @@
+apiVersion: skaffold/v2beta7
+kind: Config
+metadata:
+  name: k-s-java-skaffold-sample
+build:
+  artifacts:
+  - image: skaffold/sample
+deploy:
+  kubectl:
+    manifests:
+    - etc/k8s/deploy.yaml
+portForward:
+  - resourceType: deployment
+    resourceName: skaffold-sample
+    port: 8080
+    localPort: 9000
